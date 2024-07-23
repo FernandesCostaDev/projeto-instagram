@@ -45,4 +45,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //dependencia para criar um ImageView circular
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 }

@@ -21,16 +21,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".login.view.register.view.RegisterActivity"
             android:exported="false">
 
         </activity>
+
         <activity
             android:name=".login.view.LoginActivity"
             android:exported="false">
 
         </activity>
+
     </application>
 
 </manifest>
