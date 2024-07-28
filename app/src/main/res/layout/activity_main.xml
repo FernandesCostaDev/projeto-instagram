@@ -37,11 +37,11 @@
 
         <fragment
             android:id="@+id/main_fragment"
-            android:name="com.example.instagram.login.view.profile.view.FragmentProfile"
+            android:name="com.example.instagram.login.view.home.view.FragmentHome"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/fragment_profile"/>
+            tools:layout="@layout/fragment_home"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
