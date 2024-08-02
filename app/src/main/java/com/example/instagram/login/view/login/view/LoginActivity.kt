@@ -1,8 +1,6 @@
 package com.example.instagram.login.view.login.view
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.example.instagram.databinding.ActivityLoginBinding
 import com.example.instagram.login.view.common.util.TxtWatcher
@@ -11,6 +9,7 @@ import com.example.instagram.login.view.login.Login
 class LoginActivity : AppCompatActivity(), Login.View {
 
     private lateinit var bindig: ActivityLoginBinding
+    //private lateinit var presenter: Login.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,12 +21,8 @@ class LoginActivity : AppCompatActivity(), Login.View {
             loginEditPassword.addTextChangedListener(watcher)
 
             loginBtnEnter.setOnClickListener {
-                //VAI CHAMAR O PRESENTER
-                /*Handler(Looper.getMainLooper()).postDelayed(
-                    {
-                        bindig.loginBtnEnter.showProgress(false)
-                    }, 2000
-                )*/
+               /* //VAI CHAMAR O PRESENTER
+                presenter.login(loginEditEmail.text.toString(), loginEditPassword.text.toString())*/
             }
         }
     }
@@ -56,3 +51,12 @@ class LoginActivity : AppCompatActivity(), Login.View {
         // MOSTRAR UM ALERTA
     }
 }
+
+/*
+Looper do progress bar
+Handler(Looper.getMainLooper()).postDelayed(
+    {
+        bindig.loginBtnEnter.showProgress(false)
+    }, 2000
+)
+*/
