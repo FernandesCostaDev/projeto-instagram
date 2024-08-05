@@ -1,4 +1,4 @@
-package com.example.instagram.login.view.login.view
+package com.example.instagram.login.view.home.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
