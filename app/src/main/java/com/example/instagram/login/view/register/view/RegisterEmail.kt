@@ -7,7 +7,7 @@ import com.example.instagram.login.view.common.base.BaseView
 interface RegisterEmail {
 
     interface Presenter: BasePresenter{
-
+        fun create(email: String)
     }
 
     //interface que vai retornar a msg de erro para activity de view do RegisterActivity
