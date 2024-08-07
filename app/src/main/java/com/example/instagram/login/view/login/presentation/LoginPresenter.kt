@@ -2,6 +2,7 @@ package com.example.instagram.login.view.login.presentation
 
 import android.util.Patterns
 import com.example.instagram.R
+import com.example.instagram.login.view.common.model.UserAuth
 import com.example.instagram.login.view.login.Login
 import com.example.instagram.login.view.login.data.LoginCallback
 import com.example.instagram.login.view.login.data.LoginRepository
@@ -28,7 +29,7 @@ class LoginPresenter(private var view: Login.View?, private val repository: Logi
         if (isEmailValid && isPasswordValid) {
             view?.showProgress(true)
             repository.login(email, password, object : LoginCallback {
-                override fun onSeccess() {
+                override fun onSeccess(userAuth: UserAuth) {
                     view?.onUserAuthenticated()
                 }
 
