@@ -6,11 +6,26 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.instagram.R
+import com.example.instagram.databinding.FragmentRegisterEmailBinding
 
-class RegisterEmailFragment: Fragment (){
+class RegisterEmailFragment : Fragment (R.layout.fragment_register_email), RegisterEmail.View{
 
-    override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View? {
-       return inflater.inflate(R.layout.fragment_register_email,container,false)
+   private var binding: FragmentRegisterEmailBinding? = null
+   override lateinit var presenter: RegisterEmail.Presenter
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding = FragmentRegisterEmailBinding.bind(view)
+
     }
 
+    override fun displayEmailFailure(emailError: Int?) {
+    }
+
+    override fun onDestroy() {
+        binding = null
+        presenter.onDestroy()
+        super.onDestroy()
+    }
 }

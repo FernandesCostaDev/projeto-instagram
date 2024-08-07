@@ -10,6 +10,7 @@ import com.example.instagram.login.view.common.util.TxtWatcher
 import com.example.instagram.login.view.login.Login
 import com.example.instagram.login.view.login.presentation.LoginPresenter
 import com.example.instagram.login.view.main.view.MainActivity
+import com.example.instagram.login.view.register.view.RegisterActivity
 
 class LoginActivity : AppCompatActivity(), Login.View {
 
@@ -38,7 +39,16 @@ class LoginActivity : AppCompatActivity(), Login.View {
               //VAI CHAMAR O PRESENTER
                 presenter.login(loginEditEmail.text.toString(), loginEditPassword.text.toString())
             }
+
+            loginTxtRegister.setOnClickListener {
+                goToRegisterScreen()
+            }
+
         }
+    }
+
+    private fun goToRegisterScreen() {
+       startActivity(Intent(this, RegisterActivity::class.java))
     }
 
     override fun onDestroy() {
