@@ -2,6 +2,7 @@ package com.example.instagram.login.view.register.view
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -78,6 +79,7 @@ class RegisterEmailFragment : Fragment (R.layout.fragment_register_email), Regis
     }
 
     override fun goToNameAndPasswordScreen(email: String) {
-       //Depois implementa
+     fragmentAttachListener?.goToNameAndPasswordScreen(email)
+        Log.i("teste", email)
     }
 }
