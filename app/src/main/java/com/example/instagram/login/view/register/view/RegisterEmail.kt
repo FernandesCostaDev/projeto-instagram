@@ -12,6 +12,10 @@ interface RegisterEmail {
 
     //interface que vai retornar a msg de erro para activity de view do RegisterActivity
     interface View: BaseView<Presenter> {
+        fun showProgress(enabled: Boolean)
         fun displayEmailFailure(@StringRes emailError: Int?)
+        fun onEmailFailure(message: String)
+        fun goToNameAndPasswordScreen(email: String)
+
     }
 }

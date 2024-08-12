@@ -15,4 +15,8 @@ class RegisterNamePasswordFragment : Fragment(){
     ): View? {
         return inflater.inflate(R.layout.fragment_register_name_password, container, false)
     }
+
+    companion object{
+        const val KEY_EMAIL = "key_email"
+    }
 }
