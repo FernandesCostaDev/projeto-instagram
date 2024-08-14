@@ -2,15 +2,11 @@ package com.example.instagram.login.view.register.view.presentation
 
 import android.util.Patterns
 import com.example.instagram.R
-import com.example.instagram.login.view.common.model.UserAuth
-import com.example.instagram.login.view.login.Login
-import com.example.instagram.login.view.login.data.LoginCallback
-import com.example.instagram.login.view.login.data.LoginRepository
 import com.example.instagram.login.view.register.view.RegisterEmail
-import com.example.instagram.login.view.register.view.data.RegisterEmailCallback
-import com.example.instagram.login.view.register.view.data.RegisterEmailRepository
+import com.example.instagram.login.view.register.view.data.RegisterCallback
+import com.example.instagram.login.view.register.view.data.RegisterRepository
 
-class RegisterEmailPresenter(private var view: RegisterEmail.View?, private val repository: RegisterEmailRepository) : RegisterEmail.Presenter {
+class RegisterEmailPresenter(private var view: RegisterEmail.View?, private val repository: RegisterRepository) : RegisterEmail.Presenter {
 
     override fun create(email: String) {
 
@@ -25,7 +21,7 @@ class RegisterEmailPresenter(private var view: RegisterEmail.View?, private val 
         if (isEmailValid) {
             view?.showProgress(true)
 
-            repository.create(email, object : RegisterEmailCallback {
+            repository.create(email, object : RegisterCallback {
                 override fun onSeccess() {
                     view?.goToNameAndPasswordScreen(email)
                 }
