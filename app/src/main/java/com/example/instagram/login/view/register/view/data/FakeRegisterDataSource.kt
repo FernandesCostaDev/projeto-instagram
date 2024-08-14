@@ -6,7 +6,7 @@ import com.example.instagram.login.view.common.model.Database
 import com.example.instagram.login.view.common.model.UserAuth
 import java.util.UUID
 
-class FakeRegisterEmailDataSource : RegisterDataSource {
+class FakeRegisterDataSource : RegisterDataSource {
 
     override fun create(email: String, callback: RegisterCallback) {
         Handler(Looper.getMainLooper()).postDelayed({
@@ -34,13 +34,11 @@ class FakeRegisterEmailDataSource : RegisterDataSource {
                 if (userAuth != null) {
                     callback.onFailure("Usuário já cadastrado")
                 } else {
-                    val created = Database.usersAuth.add(
-                        UserAuth(
-                            UUID.randomUUID().toString(),
-                            email, name, password
-                        )
-                    )
+                    val newUser = UserAuth(UUID.randomUUID().toString(), email, name, password)
+                    val created = Database.usersAuth.add(newUser)
+
                     if (created) {
+                        Database.sessionAuth = newUser
                         callback.onSeccess()
                     } else {
                         callback.onFailure("Erro interno no servidor.")

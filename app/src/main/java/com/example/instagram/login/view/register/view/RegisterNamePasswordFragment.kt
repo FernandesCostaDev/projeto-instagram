@@ -20,7 +20,10 @@ import com.example.instagram.login.view.register.view.presentation.RegisterNameA
 class RegisterNamePasswordFragment : Fragment(R.layout.fragment_register_name_password),RegisterNameAndPassword.View{
 
     private var binding: FragmentRegisterNamePasswordBinding? = null
+    private var fragmentAttachListener: FragmentAttachListener? = null
     override lateinit var presenter: RegisterNameAndPassword.Presenter
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -65,6 +68,13 @@ class RegisterNamePasswordFragment : Fragment(R.layout.fragment_register_name_pa
         }
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is FragmentAttachListener){
+            fragmentAttachListener = context
+        }
+    }
+
     private val watcher = TxtWatcher{
         binding?.registerNameBtnNext?.isEnabled = binding?.registerEditName?.text.toString().isNotEmpty()
                 && binding?.registerEditPassword?.text.toString().isNotEmpty()
@@ -94,7 +104,7 @@ class RegisterNamePasswordFragment : Fragment(R.layout.fragment_register_name_pa
     }
 
     override fun onCreateSuccess(name: String) {
-        //TODO: ABRIR A TELA DE BEM VINDOS
+       fragmentAttachListener?.goToWelcomeScreen(name)
     }
 
     override fun onCreateFailure(message: String) {
