@@ -5,6 +5,7 @@ import java.util.UUID
 //Esse Database não é como outro, quando o app é fechado ele é apagado da memória
 object Database {
     val usersAuth = hashSetOf<UserAuth>()
+    val photos = hashSetOf<Photo>()
 
     //variável responsável por armazenar o usuário autenticado
     var sessionAuth: UserAuth? = null

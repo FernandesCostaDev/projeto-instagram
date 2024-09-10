@@ -23,7 +23,6 @@ class RegisterNamePasswordFragment : Fragment(R.layout.fragment_register_name_pa
     private var fragmentAttachListener: FragmentAttachListener? = null
     override lateinit var presenter: RegisterNameAndPassword.Presenter
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

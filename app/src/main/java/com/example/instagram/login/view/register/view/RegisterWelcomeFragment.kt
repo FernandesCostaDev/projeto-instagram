@@ -47,4 +47,4 @@ class RegisterWelcomeFragment : Fragment(R.layout.fragment_register_welcome) {
     companion object {
         const val KEY_NAME = "key_name"
     }
-    }
+}

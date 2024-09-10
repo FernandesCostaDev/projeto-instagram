@@ -40,16 +40,20 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation("com.google.android.material:material:1.4.0")
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.media3.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    //dependencia para transferencia de dados entre fragmentos
+    implementation ("androidx.fragment:fragment-ktx:1.8.2")
     //dependencia para criar um ImageView circular
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+    //dependencia para fazer corte de imagem
+    implementation ("com.github.CanHub:Android-Image-Cropper:2.0.0")
 }

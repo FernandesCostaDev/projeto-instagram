@@ -1,5 +1,6 @@
 package com.example.instagram.login.view.main.view
 
+import android.os.Build
 import android.os.Bundle
 import android.view.WindowInsetsController
 import androidx.appcompat.app.AppCompatActivity
@@ -12,10 +13,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //mudando a statusbar - só vai alterar a statusbar na tela principal, as outras telas continua normal
-        window.insetsController?.setSystemBarsAppearance(WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
-            WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.gray)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
+            //mudando a statusbar - só vai alterar a statusbar na tela principal, as outras telas continua normal
+            window.insetsController?.setSystemBarsAppearance(WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
+                WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS)
+            window.statusBarColor = ContextCompat.getColor(this, R.color.gray)
+        }
 
         val toolbar = findViewById<Toolbar>(R.id.main_toolbar)
         setSupportActionBar(toolbar)

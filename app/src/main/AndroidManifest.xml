@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+<!--dizer para google play que o aplicativo vai usar a camera,
+ o app só vai funcionar em aparelhos com camera, e também não vai aparecer na lista de apps-->
+   <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <!--queries usada para captura da imagem da camera-->
+   <queries>
+       <intent>
+           <action android:name="android.media.action.IMAGE_CAPTURE" />
+       </intent>
+   </queries>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -32,6 +42,18 @@
             </intent-filter>
 
         </activity>
+
+<!--códigos para uso da camera-->
+        <provider
+            android:authorities="com.example.instagram.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+
+        </provider>
 
     </application>
 

@@ -1,5 +1,7 @@
 package com.example.instagram.login.view.register.view.data
 
+import android.net.Uri
+
 class RegisterRepository(private val dataSource: RegisterDataSource)  {
 
     fun create(email: String, callback:RegisterCallback){
@@ -16,4 +18,7 @@ class RegisterRepository(private val dataSource: RegisterDataSource)  {
         dataSource.create(email, name, password,callback)
     }
 
+    fun updateUser(photoUri: Uri, callback: RegisterCallback){
+        dataSource.updateUser(photoUri, callback)
+    }
 }
