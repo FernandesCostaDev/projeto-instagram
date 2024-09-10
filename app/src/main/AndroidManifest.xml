@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-<!--dizer para google play que o aplicativo vai usar a camera,
- o app só vai funcionar em aparelhos com camera, e também não vai aparecer na lista de apps-->
-   <uses-feature android:name="android.hardware.camera" android:required="true"/>
-    <!--queries usada para captura da imagem da camera-->
-   <queries>
-       <intent>
-           <action android:name="android.media.action.IMAGE_CAPTURE" />
-       </intent>
-   </queries>
+    <!--
+ dizer para google play que o aplicativo vai usar a camera,
+ o app só vai funcionar em aparelhos com camera, e também não vai aparecer na lista de apps
+    -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" /> <!-- queries usada para captura da imagem da camera -->
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
 
     <application
         android:allowBackup="true"
@@ -23,18 +25,9 @@
         android:theme="@style/Theme.Instagram"
         tools:targetApi="31">
         <activity
-            android:name=".login.view.main.view.MainActivity"
+            android:name=".Splash.view.SplashActivity"
             android:exported="true">
-        </activity>
 
-        <activity
-            android:name=".login.view.register.view.RegisterActivity"
-            android:exported="true">
-        </activity>
-
-        <activity
-            android:name=".login.view.LoginActivity"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,19 +35,32 @@
             </intent-filter>
 
         </activity>
+        <activity
+            android:name=".login.view.main.view.MainActivity"
+            android:exported="true">
+        </activity>
 
-<!--códigos para uso da camera-->
+        <activity
+            android:name=".login.view.register.view.RegisterActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name=".login.view.LoginActivity"
+            android:exported="true">
+        </activity>
+
+        <!-- códigos para uso da camera -->
         <provider
-            android:authorities="com.example.instagram.fileprovider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.instagram.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
-
+                android:resource="@xml/file_paths" />
         </provider>
-
     </application>
 
 </manifest>
