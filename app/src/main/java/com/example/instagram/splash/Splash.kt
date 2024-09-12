@@ -1,4 +1,4 @@
-package com.example.instagram.Splash
+package com.example.instagram.splash
 
 import com.example.instagram.login.view.common.base.BasePresenter
 import com.example.instagram.login.view.common.base.BaseView

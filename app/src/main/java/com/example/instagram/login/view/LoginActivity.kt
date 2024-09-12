@@ -13,7 +13,6 @@ import com.example.instagram.login.view.main.view.MainActivity
 import com.example.instagram.login.view.register.view.RegisterActivity
 
 class LoginActivity : AppCompatActivity(), Login.View {
-
     private lateinit var bindig: ActivityLoginBinding
     override lateinit var presenter: Login.Presenter
 

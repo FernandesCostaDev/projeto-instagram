@@ -1,8 +1,8 @@
-package com.example.instagram.Splash.presentation
+package com.example.instagram.splash.presentation
 
-import com.example.instagram.Splash.Splash
-import com.example.instagram.Splash.data.SplashCallback
-import com.example.instagram.Splash.data.SplashRepository
+import com.example.instagram.splash.Splash
+import com.example.instagram.splash.data.SplashCallback
+import com.example.instagram.splash.data.SplashRepository
 
 class SplashPresenter(private var view: Splash.View?, private val repository: SplashRepository) :
     Splash.Presenter {

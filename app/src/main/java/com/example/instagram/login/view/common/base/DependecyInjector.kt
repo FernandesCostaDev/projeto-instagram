@@ -1,7 +1,7 @@
 package com.example.instagram.login.view.common.base
 
-import com.example.instagram.Splash.data.FakeLocalDataSource
-import com.example.instagram.Splash.data.SplashRepository
+import com.example.instagram.splash.data.FakeLocalDataSource
+import com.example.instagram.splash.data.SplashRepository
 import com.example.instagram.login.view.login.data.FakeDataSource
 import com.example.instagram.login.view.login.data.LoginRepository
 import com.example.instagram.login.view.register.view.data.FakeRegisterDataSource

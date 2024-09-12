@@ -1,4 +1,4 @@
-package com.example.instagram.Splash.data
+package com.example.instagram.splash.data
 
 class SplashRepository (private val dataSource: SplashDataSource){
     fun session(callback: SplashCallback){

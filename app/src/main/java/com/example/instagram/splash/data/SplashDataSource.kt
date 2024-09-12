@@ -1,4 +1,4 @@
-package com.example.instagram.Splash.data
+package com.example.instagram.splash.data
 
 interface SplashDataSource {
     fun session(callback: SplashCallback)
